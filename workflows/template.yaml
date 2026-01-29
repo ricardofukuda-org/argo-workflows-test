@@ -4,7 +4,7 @@ metadata:
   name: workflow-template-submittable
   namespace: argo-workflows
 spec:
-  entrypoint: print-message     # Fields other than "arguments" and "templates" not supported in v2.4 - v2.6
+  entrypoint: entrypoint     # Fields other than "arguments" and "templates" not supported in v2.4 - v2.6
   arguments:
     parameters:
       - name: message
