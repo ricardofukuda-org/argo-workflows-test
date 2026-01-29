@@ -11,9 +11,9 @@ metadata:
 spec:
   parallelism: 1
   entrypoint: hello-world
-  retryStrategy: 
-    backoff:
-      duration: 3m
+#  retryStrategy: 
+#    backoff:
+#      duration: 3m
   templates:
   - name: hello-world
     container:
