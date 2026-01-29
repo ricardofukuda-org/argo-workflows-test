@@ -18,3 +18,22 @@ spec:
         image: busybox
         command: [echo]
         args: ["{{inputs.parameters.message}}"]
+    - name: git-clone
+      inputs:
+        artifacts:
+        - name: argo-source
+          path: /src
+          git:
+            repo: https://github.com/ricardofukuda-org/argo-workflows-test.git
+            revision: "master"
+            usernameSecret:
+              name: argo-workflows-github-creds
+              key: username
+            passwordSecret:
+              name: argo-workflows-github-creds
+              key: password
+      container:
+        image: golang:1.10
+        command: [sh, -c]
+        args: ["git status && ls && cat VERSION"]
+        workingDir: /src
