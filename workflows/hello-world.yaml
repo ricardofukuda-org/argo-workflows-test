@@ -11,9 +11,9 @@ metadata:
 spec:
   parallelism: 1
   entrypoint: hello-world
-#  retryStrategy: 
-#    backoff:
-#      duration: 3m
+  retryStrategy: 
+    backoff:
+      duration: 3m # required to prevent argocd from instanciating MANY workloads 'generateName' right after sync.
   templates:
   - name: hello-world
     container:
