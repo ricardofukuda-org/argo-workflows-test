@@ -9,6 +9,7 @@ metadata:
     workflows.argoproj.io/description: |
       This is a simple hello world example.
 spec:
+  parallelism: 1
   entrypoint: hello-world
   templates:
   - name: hello-world
