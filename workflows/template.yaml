@@ -10,6 +10,12 @@ spec:
       - name: message
         value: hello world
   templates:
+    - name: entrypoint 
+      steps:
+      - name: print-message
+        template: print-message
+      - name: git-clone
+        template: git-clone
     - name: print-message
       inputs:
         parameters:
